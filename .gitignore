@@ -1,0 +1,37 @@
+# Large model files (exceed GitHub 100MB limit)
+pretrained_model/imagenet-vgg-verydeep-19.mat
+models/resnet50.h5
+model_data/variables/variables.data-00000-of-00001
+
+# Large model files (exceed GitHub 50MB recommended limit)
+pretrained_model/vgg19_weights_tf_dim_ordering_tf_kernels_notop.h5
+model_data/variables/variables_part1
+model_data/variables/variables_part2
+model_data/variables/variables_part3
+keras-facenet-h5/model.h5
+keras-facenet-h5/facenet_keras.h5
+
+# Virtual environment
+DLspe_venv/
+venv/
+.env/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
