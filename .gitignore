@@ -8,8 +8,32 @@ pretrained_model/vgg19_weights_tf_dim_ordering_tf_kernels_notop.h5
 model_data/variables/variables_part1
 model_data/variables/variables_part2
 model_data/variables/variables_part3
+model_data/variables/variables.data-00000-of-00001
+
 keras-facenet-h5/model.h5
 keras-facenet-h5/facenet_keras.h5
+data/training_example.wav
+data/glove.6B.50d.txt
+models/resnet50.h5
+models/model.h5
+XY_train/X.npy
+glove/glove.6B.100d.txt
+model_data/XY_train/X.npy
+model_data/XY_dev/X_dev.npy
+model_data/model/tensorflow/tf_model.h5
+model_data/model/tf_model.h5
+model_data/model/pytorch/pytorch_model.bin
+
+
+
+# Training results and checkpoints
+results/
+*.safetensors
+*.pt
+*.pth
+*.ckpt
+
+
 
 # Virtual environment
 DLspe_venv/

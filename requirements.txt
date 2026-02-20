@@ -1,0 +1,12 @@
+numpy
+pandas
+matplotlib
+scipy
+h5py
+tensorflow
+scikit-learn
+Pillow
+pydub
+emoji
+datasets
+transformers

@@ -6,6 +6,7 @@ from tensorflow.keras.layers import Dense, Activation, Dropout, Input, Masking
 from tensorflow.keras.layers import LSTM
 from tensorflow.keras.utils import get_file
 from tensorflow.keras.preprocessing.sequence import pad_sequences
+from tensorflow.keras.optimizers import Adam
 import numpy as np
 import random
 import sys
@@ -54,8 +55,8 @@ def vectorization(X, Y, n_x, char_indices, Tx = 40):
     """
     
     m = len(X)
-    x = np.zeros((m, Tx, n_x), dtype=np.bool)
-    y = np.zeros((m, n_x), dtype=np.bool)
+    x = np.zeros((m, Tx, n_x), dtype=bool)
+    y = np.zeros((m, n_x), dtype=bool)
     for i, sentence in enumerate(X):
         for t, char in enumerate(sentence):
             x[i, t, char_indices[char]] = 1
@@ -129,7 +130,17 @@ X, Y = build_data(text, Tx, stride = 3)
 print("Vectorizing training set...")
 x, y = vectorization(X, Y, n_x = len(chars), char_indices = char_indices) 
 print("Loading model...")
-model = load_model('models/model_shakespeare_kiank_350_epoch.h5')
+model = load_model(
+    'models/model_shakespeare_kiank_350_epoch.h5',
+    compile=False,           # skip compiling for now
+    safe_mode=False          # often needed for legacy .h5 files
+)
+
+# Manually re-compile with modern optimizer
+model.compile(
+    optimizer=Adam(learning_rate=0.001),   # or whatever learning rate you want
+    loss='categorical_crossentropy'
+)
 
 
 def generate_output():
